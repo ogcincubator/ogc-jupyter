@@ -34,5 +34,5 @@ To run the Notebook locally, you first need to create a Python virtual environme
 4. Install the required dependencies with `python -m pip install -r requirements.txt`.
 5. Start the Notebook: `jupyter-lab`
 
-The Notebook will be available on port 8888 (the last of the commands above should automatically open
+The Notebook will be available on port 8888 (the last command should automatically open
 a browser window). You can then open the `Uplift pipeline example.ipynb` Notebook file.
