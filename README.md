@@ -10,7 +10,7 @@ the easiest way to view the notebook is by using Docker.
 After ensuring that you have a working Docker environment, run the following command:
 
 ```shell
-docker run --rm -p 8888:8888 -v "$(pwd)/output:/output" dockerogc/jupyter-iso19157-3
+docker run --rm -p 8888:8888 -v "$(pwd)/work:/notebook/work" dockerogc/jupyter-iso19157-3
 ```
 
 This will start the Notebook, making it available on port 8888. Check the console output for a link in
@@ -20,8 +20,8 @@ You can then open the `Uplift pipeline example.ipynb` Notebook file.
 Notes: 
 * The `--rm` flag above will destroy the Notebook container once you are done with it.
 * The `-p 8888:8888` configuration is used to forward port 8888 on your machine to port 8888 in the container.
-* `-v $(pwd)/output:/output` mounts a local (in the current directory) `output` subdirectory to the 
-`/output` directory in the container, so that all files created when running the notebook will be available
+* `-v "$(pwd)/work:/notebook/work"` mounts a local (in the current directory) `work` subdirectory to the 
+`/notebook/work` directory in the container, so that all files created when running the notebook will be available
 even after the Notebook is closed. **The syntax maybe different for Windows environments**.
 
 ### Locally
