@@ -32,6 +32,17 @@ Notes:
 `/notebook/work` directory in the container, so that all files created when running the notebook will be available
 even after the Notebook is closed. **The syntax maybe different for Windows environments**.
 
+#### Mounting other directories
+
+Some notebooks may require additional directories to be mounted, such as a local copy of the OGC Building Blocks Register.
+You can add as many `-v "/absolute/local/path:/notebook/notebook-path"` parameters to the Docker command before `dockerogc/jupyter-notebooks`,
+replacing `/absolute/local/path` with an absolute path on your computer and `notebook-path` with the name that you want to give it inside the
+container, for example:
+
+```shell
+docker run --rm -p 8888:8888 -v "$(pwd)/work:/notebook/work" -v "/home/user/projects/bblocks:/notebook/bblocks" dockerogc/jupyter-notebooks
+```
+
 ### Locally
 
 To run the Notebook locally, you first need to create a Python virtual environment and install the required packages:
