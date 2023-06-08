@@ -1,6 +1,14 @@
-# ISO19157-3 properties uplift example Jupyter notebook
+# OGC Examples Jupyter Notebook
 
-## Running the notebook
+## Available notebooks
+
+This repository contains the following notebooks:
+
+* `Update pipeline example.ipynb`: Example of a full data pipeline (from CSV to RDF) for the ISO19157-3 data quality
+measure properties.
+* `Building Blocks schema validation.ipynb`: Example of how to use OGC Building Blocks to validate objects.
+
+## Running the notebooks
 
 ### Docker (recommended)
 
@@ -15,7 +23,7 @@ docker run --rm -p 8888:8888 -v "$(pwd)/work:/notebook/work" dockerogc/jupyter-i
 
 This will start the Notebook, making it available on port 8888. Check the console output for a link in
 the form `http://127.0.0.1:8888/lab?token=abcdef123456`; you will need to use it to access the Notebook.
-You can then open the `Uplift pipeline example.ipynb` Notebook file.
+You can then open the Notebook file you want to use.
 
 Notes: 
 * The `--rm` flag above will destroy the Notebook container once you are done with it.
@@ -34,5 +42,5 @@ To run the Notebook locally, you first need to create a Python virtual environme
 4. Install the required dependencies with `python -m pip install -r requirements.txt`.
 5. Start the Notebook: `jupyter-lab`
 
-The Notebook will be available on port 8888 (the last command should automatically open
-a browser window). You can then open the `Uplift pipeline example.ipynb` Notebook file.
+The Notebook will be available on port 8888 (the last of the commands above should automatically open
+a browser window). You can then open the Notebook file you want to use.
