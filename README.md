@@ -18,7 +18,7 @@ the easiest way to view the notebook is by using Docker.
 After ensuring that you have a working Docker environment, run the following command:
 
 ```shell
-docker run --rm -p 8888:8888 -v "$(pwd)/work:/notebook/work" dockerogc/jupyter-iso19157-3
+docker run --rm -p 8888:8888 -v "$(pwd)/work:/notebook/work" dockerogc/jupyter-notebooks
 ```
 
 This will start the Notebook, making it available on port 8888. Check the console output for a link in
