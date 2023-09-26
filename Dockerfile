@@ -3,7 +3,7 @@ FROM python:3.10-slim
 EXPOSE 8888
 
 WORKDIR /notebook
-COPY requirements.txt
+COPY requirements.txt ./
 
 RUN python -m venv /venv && . /venv/bin/activate && \
     python -m pip install -U pip && \
