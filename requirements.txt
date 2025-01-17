@@ -1,4 +1,4 @@
 jupyterlab
 ogc-na>=0.2.8, <2
 jsonschema
-
+pyshacl
