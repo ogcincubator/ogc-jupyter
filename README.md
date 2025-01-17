@@ -6,19 +6,20 @@ This repository contains the following notebooks:
 
 * `Update pipeline example.ipynb`: Example of a full data pipeline (from CSV to RDF) for the ISO19157-3 data quality
 measure properties.
-* `Building Blocks schema validation.ipynb`: Example of how to use OGC Building Blocks to validate objects.
+* `bblocks/`: Notebooks related to the [OGC Building Blocks](https://blocks.ogc.org)
+  * `01 Building Blocks basics.ipynb`: Intro to using the Building Blocks.
 
 ## Running the notebooks
 
 ### Docker (recommended)
 
-Since the notebook has external dependencies (namely the [ogc-na](https://pypi.org/project/ogc-na/) module),
+Since the notebook has external dependencies (mainly the [ogc-na](https://pypi.org/project/ogc-na/) module),
 the easiest way to view the notebook is by using Docker.
 
 After ensuring that you have a working Docker environment, run the following command:
 
 ```shell
-docker run --rm -p 8888:8888 -v "$(pwd)/work:/notebook/work" dockerogc/jupyter-notebooks
+docker run --rm --pull=always -p 8888:8888 -v "$(pwd)/work:/notebook/work" dockerogc/jupyter-notebooks
 ```
 
 This will start the Notebook, making it available on port 8888. Check the console output for a link in
@@ -27,6 +28,7 @@ You can then open the Notebook file you want to use.
 
 Notes: 
 * The `--rm` flag above will destroy the Notebook container once you are done with it.
+* `--pull=always` guarantees that you are running the latest version of the Docker image.
 * The `-p 8888:8888` configuration is used to forward port 8888 on your machine to port 8888 in the container.
 * `-v "$(pwd)/work:/notebook/work"` mounts a local (in the current directory) `work` subdirectory to the 
 `/notebook/work` directory in the container, so that all files created when running the notebook will be available
